@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/expand_grid"
+    android:numColumns="3"
+    android:listSelector="@null"
+    android:scrollbars="none"
+    android:background="#606469"
+    android:layout_height="match_parent"></GridView>
