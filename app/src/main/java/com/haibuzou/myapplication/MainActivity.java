@@ -112,15 +112,14 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
                 ImageView mimage = (ImageView) circlelayout
                         .findViewWithTag(lastlocation + 1 + 10);
                 if (mimage != null) {
-                    mimage.setBackgroundDrawable(getResources().getDrawable(
-                            R.mipmap.black_circle));
+                    mimage.setImageResource(R.mipmap.black_circle);
                 }
             }
+
             ImageView image = (ImageView) circlelayout
                     .findViewWithTag(arg0 + 1 + 10);
             if (image != null) {
-                image.setBackgroundDrawable(getResources().getDrawable(
-                        R.mipmap.orange_circle));
+                image.setImageResource(R.mipmap.orange_circle);
             }
 
             lastlocation = arg0;
@@ -132,7 +131,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
         }
 
         private void init(View v, int location) {
-            List<BaseData> list = new ArrayList<BaseData>();
+            List<BaseData> list = new ArrayList<>();
             ViewPager pager = (ViewPager) v.findViewById(R.id.expand_item);
             // 底部的圆点初始化
             circlelayout = (LinearLayout) v.findViewById(R.id.circle_layout);
@@ -141,7 +140,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
             // 初始化一个params 用于圆点大小设置
             LinearLayout.LayoutParams circleparams = new LinearLayout.LayoutParams(radio, radio);
             circleparams.setMargins(0, 0, 10, 0);
-            List<View> views = new ArrayList<View>();
+            List<View> views = new ArrayList<>();
             // 下拉表格的行数
             int row = zhaoPin.getJobtype().get(location).getJobtype().size() / NUM_LINE;
             if (row > 4) {
