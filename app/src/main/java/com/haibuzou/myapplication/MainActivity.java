@@ -32,11 +32,11 @@ import java.util.List;
 public class MainActivity extends Activity implements ExpandGridAdapter.OnClick {
 
     //招聘数据
-    private List<ZhaoPin> data = null;
-    private LinearLayout currenPositionLinear = null;
+    private List<ZhaoPin> data;
+    private LinearLayout currenPositionLinear;
     private Integer duration = 200;
     private RelativeLayout rel;
-    private String itemId = null;
+    private String itemId;
     //记录点击位置
     private String clickPosition = "";
     private MyTextView clicktxt;
@@ -45,7 +45,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
     private int lastlocation = -1;
     private ExpandGridAdapter.OnClick listener;
     //每行显示条目个数
-    private final int NUM_LINE = 3;
+    private static final int NUM_LINE = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

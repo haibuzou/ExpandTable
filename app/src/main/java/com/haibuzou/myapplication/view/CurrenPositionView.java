@@ -17,7 +17,7 @@ import com.haibuzou.myapplication.view.MyTextView;
 
 public class CurrenPositionView extends LinearLayout {
     //每行item个数
-    private final int ROW_NUM = 3;
+    private static final int ROW_NUM = 3;
     private TextView titleView;
     private ZhaoPin data;
     private TableLayout tableLayout;
