@@ -20,7 +20,7 @@ public class MyTextView extends TextView {
     private Paint linepaint;
     private Paint tripaint;
     private Path path;
-    private Boolean isDraw = false;
+    private Boolean isDraw;
     private float textSize;
 
     public MyTextView(Context context) {
