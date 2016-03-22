@@ -69,7 +69,7 @@ public class ViewHolder {
      */
     public static ViewHolder get(Context context, View convertView,
                                  ViewGroup parent, int layoutId, int position) {
-        ViewHolder holder = null;
+        ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder(context, parent, layoutId, position);
         } else {
@@ -90,7 +90,7 @@ public class ViewHolder {
      */
     public static ViewHolder get(Context context, View convertView,
                                  ViewGroup parent, Class<? extends View> view, int position) throws Exception {
-        ViewHolder holder = null;
+        ViewHolder holder;
         if (convertView == null) {
             Constructor<?> constructor = view.getConstructor(Context.class);
             View contentView = (View) constructor.newInstance(context);
