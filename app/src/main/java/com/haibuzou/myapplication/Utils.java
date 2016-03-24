@@ -19,9 +19,8 @@ public class Utils {
         String result = readFileFromRaw(context, R.raw.zhaopin);
         if (result != null) {
             Gson gson = new Gson();
-            List<ZhaoPin> JobTypes = gson.fromJson(result, new TypeToken<List<ZhaoPin>>() {
+            return gson.fromJson(result, new TypeToken<List<ZhaoPin>>() {
             }.getType());
-            return JobTypes;
         }
         return null;
     }
@@ -43,7 +42,7 @@ public class Utils {
             InputStream input = context.getResources().openRawResource(resourceId);
             ByteArrayOutputStream output = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
-            int length = 0;
+            int length;
             while ((length = input.read(buffer)) != -1) {
                 output.write(buffer, 0, length);
             }

@@ -131,7 +131,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
         }
 
         private void init(View v, int location) {
-            List<BaseData> list = new ArrayList<>();
+            List<BaseData> list;
             ViewPager pager = (ViewPager) v.findViewById(R.id.expand_item);
             // 底部的圆点初始化
             circlelayout = (LinearLayout) v.findViewById(R.id.circle_layout);
