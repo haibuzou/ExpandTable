@@ -12,7 +12,7 @@ import android.widget.TextView;
  */
 public class ItemTextView extends TextView {
 
-    private Paint paint;
+    private final Paint paint;
     private int mwidth;
     private int mheight;
 
