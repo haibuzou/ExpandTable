@@ -34,7 +34,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
     //招聘数据
     private List<ZhaoPin> data;
     private LinearLayout currenPositionLinear;
-    private Integer duration = 200;
+    private final Integer duration = 200;
     private RelativeLayout rel;
     private String itemId;
     //记录点击位置
@@ -87,11 +87,11 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
     }
 
     public class OnItemClick implements OnClickListener, OnPageChangeListener {
-        private int position;
-        private int tag;
-        private MyTextView view;
-        private TableLayout tableLayout;
-        private ZhaoPin zhaoPin;
+        private final int position;
+        private final int tag;
+        private final MyTextView view;
+        private final TableLayout tableLayout;
+        private final ZhaoPin zhaoPin;
 
         public OnItemClick(ZhaoPin zhaoPin, int position, int tag, TableLayout table, MyTextView view) {
             this.position = position;

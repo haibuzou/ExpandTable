@@ -16,8 +16,8 @@ public class ViewHolder {
     private final SparseArray<SoftReference<View>> mViews;
     private final SparseArray<SoftReference<View>> childViews;
     private int mPosition;
-    private View mConvertView;
-    private ViewGroup parent;
+    private final View mConvertView;
+    private final ViewGroup parent;
 
     private ViewHolder(Context context, ViewGroup parent, int layoutId,
                        int position) {
