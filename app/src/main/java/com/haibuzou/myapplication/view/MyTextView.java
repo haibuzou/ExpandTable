@@ -52,6 +52,8 @@ public class MyTextView extends TextView {
         tripaint = new Paint();
         tripaint.setColor(Color.GRAY);
 
+        isDraw = false;
+
     }
 
     @Override
