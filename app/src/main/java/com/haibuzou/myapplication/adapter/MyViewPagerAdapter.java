@@ -1,9 +1,9 @@
 package com.haibuzou.myapplication.adapter;
 
-import java.util.List;
-
 import android.support.v4.view.ViewPager;
 import android.view.View;
+
+import java.util.List;
 
 public class MyViewPagerAdapter extends android.support.v4.view.PagerAdapter {
 
@@ -16,14 +16,12 @@ public class MyViewPagerAdapter extends android.support.v4.view.PagerAdapter {
 
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
         return mlistViews.size();
     }
 
 
     @Override
     public int getItemPosition(Object object) {
-        // TODO Auto-generated method stub
         return super.getItemPosition(object);
     }
 
@@ -40,7 +38,6 @@ public class MyViewPagerAdapter extends android.support.v4.view.PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View arg0, Object arg1) {
-        // TODO Auto-generated method stub
         return arg0 == arg1;
     }
 

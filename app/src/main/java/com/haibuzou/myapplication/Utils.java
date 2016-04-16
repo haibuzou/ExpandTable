@@ -2,13 +2,12 @@ package com.haibuzou.myapplication;
 
 import android.content.Context;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.haibuzou.myapplication.entity.ZhaoPin;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -26,11 +25,11 @@ public class Utils {
     }
 
     /**
-     * ¶ÁÈ¡RawÎÄ¼ş¼ĞÏÂÎÄ±¾ÀàĞÍÎÄ¼ş
+     * è¯»å–Rawæ–‡ä»¶å¤¹ä¸‹æ–‡æœ¬ç±»å‹æ–‡ä»¶
      *
-     * @param context    ÉÏÏÂÎÄ
-     * @param resourceId ×ÊÔ´id
-     * @return ·µ»ØµÄ¶ÁÈ¡Íê³ÉµÄÊı¾İ string¸ñÊ½
+     * @param context    ä¸Šä¸‹æ–‡
+     * @param resourceId èµ„æºid
+     * @return è¿”å›çš„è¯»å–å®Œæˆçš„æ•°æ® stringæ ¼å¼
      */
     public static String readFileFromRaw(Context context, int resourceId) {
         if (null == context || resourceId < 0) {

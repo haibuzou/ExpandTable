@@ -31,20 +31,20 @@ import java.util.List;
 
 public class MainActivity extends Activity implements ExpandGridAdapter.OnClick {
 
-    //ÕĞÆ¸Êı¾İ
+    //æ‹›è˜æ•°æ®
     private List<ZhaoPin> data;
     private LinearLayout currenPositionLinear;
     private final Integer duration = 200;
     private RelativeLayout rel;
     private String itemId;
-    //¼ÇÂ¼µã»÷Î»ÖÃ
+    //è®°å½•ç‚¹å‡»ä½ç½®
     private String clickPosition = "";
     private MyTextView clicktxt;
-    //ÏÂÀ­µÄ Ô²µãÏÔÊ¾layout
+    //ä¸‹æ‹‰çš„ åœ†ç‚¹æ˜¾ç¤ºlayout
     private LinearLayout circlelayout;
     private int lastlocation = -1;
     private ExpandGridAdapter.OnClick listener;
-    //Ã¿ĞĞÏÔÊ¾ÌõÄ¿¸öÊı
+    //æ¯è¡Œæ˜¾ç¤ºæ¡ç›®ä¸ªæ•°
     private static final int NUM_LINE = 3;
 
     @Override
@@ -133,15 +133,15 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
         private void init(View v, int location) {
             List<BaseData> list;
             ViewPager pager = (ViewPager) v.findViewById(R.id.expand_item);
-            // µ×²¿µÄÔ²µã³õÊ¼»¯
+            // åº•éƒ¨çš„åœ†ç‚¹åˆå§‹åŒ–
             circlelayout = (LinearLayout) v.findViewById(R.id.circle_layout);
             circlelayout.removeAllViews();
             int radio = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
-            // ³õÊ¼»¯Ò»¸öparams ÓÃÓÚÔ²µã´óĞ¡ÉèÖÃ
+            // åˆå§‹åŒ–ä¸€ä¸ªparams ç”¨äºåœ†ç‚¹å¤§å°è®¾ç½®
             LinearLayout.LayoutParams circleparams = new LinearLayout.LayoutParams(radio, radio);
             circleparams.setMargins(0, 0, 10, 0);
             List<View> views = new ArrayList<>();
-            // ÏÂÀ­±í¸ñµÄĞĞÊı
+            // ä¸‹æ‹‰è¡¨æ ¼çš„è¡Œæ•°
             int row = zhaoPin.getJobtype().get(location).getJobtype().size() / NUM_LINE;
             if (row > 4) {
                 row = 4;
@@ -150,21 +150,21 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
                     row += 1;
                 }
             }
-            // ¼ÆËãÉú³É viewµÄÊıÁ¿
+            // è®¡ç®—ç”Ÿæˆ viewçš„æ•°é‡
             int i = zhaoPin.getJobtype().get(location).getJobtype().size() / 12;
             int len = zhaoPin.getJobtype().get(location).getJobtype().size() % 12;
             if (len > 0) {
                 i += 1;
             }
-            // ViewµÄ ³õÊ¼»¯
+            // Viewçš„ åˆå§‹åŒ–
             for (int n = 1; n <= i; n++) {
                 View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.viewpager, null);
                 GridView grid = (GridView) view.findViewById(R.id.expand_grid);
-                // ¼ÆËãÃ¿¸ö gridview ´æ·Å¶àÉÙÊı¾İ
+                // è®¡ç®—æ¯ä¸ª gridview å­˜æ”¾å¤šå°‘æ•°æ®
                 if (i == 0) {
                     list = zhaoPin.getJobtype().get(location).getJobtype();
                 } else if (n < i) {
-                    // Ã¿Ò»¸ö ±íÖ»ÓĞ3ÁĞ ×î¶à 4ĞĞ Ã¿¸ö±í×î¶à12¸ö
+                    // æ¯ä¸€ä¸ª è¡¨åªæœ‰3åˆ— æœ€å¤š 4è¡Œ æ¯ä¸ªè¡¨æœ€å¤š12ä¸ª
                     list = zhaoPin.getJobtype().get(location).getJobtype().subList((n - 1) * 12, n * 12);
                 } else {
                     int size = zhaoPin.getJobtype().get(location).getJobtype().size();
@@ -176,7 +176,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
                 views.add(grid);
                 if (i > 1) {
                     circlelayout.setVisibility(View.VISIBLE);
-                    // viewpager µ×²¿µÄ µã±êÊ¶
+                    // viewpager åº•éƒ¨çš„ ç‚¹æ ‡è¯†
                     ImageView image = new ImageView(MainActivity.this);
                     image.setTag(n + 10);
                     image.setImageResource(R.mipmap.black_circle);
@@ -186,7 +186,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
                 }
             }
             MyViewPagerAdapter mpa = new MyViewPagerAdapter(views);
-            // ¿í¶ÈÃ¿Ò»¸ö¸ñ¸ß¶È 42dp ×ª³Épx
+            // å®½åº¦æ¯ä¸€ä¸ªæ ¼é«˜åº¦ 42dp è½¬æˆpx
             int height = (int) (MainActivity.this.getResources().getDisplayMetrics().density * 42 + 0.5f);
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, row * height);
             pager.setLayoutParams(params);
@@ -194,18 +194,18 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
             pager.setOnPageChangeListener(this);
         }
 
-        // ÊÕËõ¶¯»­
+        // æ”¶ç¼©åŠ¨ç”»
         private void collapse(final View v) {
             final int initialHeight = v.getMeasuredHeight();
             Animation animation = new Animation() {
                 @Override
                 protected void applyTransformation(float interpolatedTime,
                                                    Transformation t) {
-                    // interpolatedTime 0-1 ½øĞĞ±ä»¯ Îª1µÄÊ±ºò±íÊ¾¶¯»­ÒÑ¾­Íê³É
+                    // interpolatedTime 0-1 è¿›è¡Œå˜åŒ– ä¸º1çš„æ—¶å€™è¡¨ç¤ºåŠ¨ç”»å·²ç»å®Œæˆ
                     if (interpolatedTime == 1) {
                         v.setVisibility(View.GONE);
                     } else {
-                        // Í¬ÑùµÄÔ­Àí ÈÃ¿Ø¼şµÄ¸ß¶È²»¶Ï±ä»¯
+                        // åŒæ ·çš„åŸç† è®©æ§ä»¶çš„é«˜åº¦ä¸æ–­å˜åŒ–
                         v.getLayoutParams().height = initialHeight
                                 - (int) (initialHeight * interpolatedTime);
                         v.requestLayout();
@@ -222,12 +222,12 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
             v.startAnimation(animation);
         }
 
-        // Õ¹¿ª¶¯»­
+        // å±•å¼€åŠ¨ç”»
         private void expand(final View v, int location) {
             init(v, location);
             v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             final int targetHeight = v.getMeasuredHeight();
-            // ×î¿ªÊ¼ÏÔÊ¾ÏÂÀ­¿Ø¼şµÄÊ±ºò ½«¸ß¶ÈÉèÎª0 ´ïµ½²»ÏÔÊ¾µÄĞ§¹û
+            // æœ€å¼€å§‹æ˜¾ç¤ºä¸‹æ‹‰æ§ä»¶çš„æ—¶å€™ å°†é«˜åº¦è®¾ä¸º0 è¾¾åˆ°ä¸æ˜¾ç¤ºçš„æ•ˆæœ
             v.getLayoutParams().height = 0;
             v.setVisibility(View.VISIBLE);
 
@@ -235,7 +235,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
                 @Override
                 protected void applyTransformation(float interpolatedTime,
                                                    Transformation t) {
-                    // ²»¶Ï±ä»¯¸ß¶ÈÀ´ÏÔÊ¾¿Ø¼ş
+                    // ä¸æ–­å˜åŒ–é«˜åº¦æ¥æ˜¾ç¤ºæ§ä»¶
                     v.getLayoutParams().height = (interpolatedTime == 1) ? RelativeLayout.LayoutParams.WRAP_CONTENT
                             : (int) (targetHeight * interpolatedTime);
                     v.requestLayout();
@@ -271,7 +271,7 @@ public class MainActivity extends Activity implements ExpandGridAdapter.OnClick 
                 if (!tempTag.equals(clickPosition)) {
                     rel = (RelativeLayout) tableLayout.findViewWithTag(tag);
                     expand(rel, position);
-                    // ÉÏÒ»´ÎµÄ¼ıÍ·È¥³ı
+                    // ä¸Šä¸€æ¬¡çš„ç®­å¤´å»é™¤
                     clicktxt.isDraw(false);
                     view.isDraw(true);
                 }

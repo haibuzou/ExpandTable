@@ -12,11 +12,10 @@ import android.widget.TextView;
 import com.haibuzou.myapplication.MainActivity;
 import com.haibuzou.myapplication.R;
 import com.haibuzou.myapplication.entity.ZhaoPin;
-import com.haibuzou.myapplication.view.MyTextView;
 
 
 public class CurrenPositionView extends LinearLayout {
-    //Ã¿ĞĞitem¸öÊı
+    //æ¯è¡Œitemä¸ªæ•°
     private static final int ROW_NUM = 3;
     private TextView titleView;
     private ZhaoPin data;
@@ -51,7 +50,7 @@ public class CurrenPositionView extends LinearLayout {
         tableLayout = (TableLayout) rootView.findViewById(R.id.job_name_table);
         tableLayout.setStretchAllColumns(true);
         setTitleStr(data.getName());
-        //³õÊ¼»¯±í¸ñÊı¾İ
+        //åˆå§‹åŒ–è¡¨æ ¼æ•°æ®
         int h = data.getJobtype().size() / ROW_NUM;
         int len = data.getJobtype().size() % ROW_NUM;
         int location = 0;
@@ -68,7 +67,7 @@ public class CurrenPositionView extends LinearLayout {
                 row.addView(mview);
                 location++;
             }
-            // Ã¿Ò»ÁĞ tablerow Ôö¼ÓÒ»¸ö ÏÂÀ­µÄlayout
+            // æ¯ä¸€åˆ— tablerow å¢åŠ ä¸€ä¸ª ä¸‹æ‹‰çš„layout
             View view = layoutInflater.inflate(R.layout.expand_item, null);
             view.setTag(n);
             view.setVisibility(View.GONE);

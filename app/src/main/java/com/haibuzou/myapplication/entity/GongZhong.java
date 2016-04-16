@@ -1,7 +1,5 @@
 package com.haibuzou.myapplication.entity;
 
-import com.haibuzou.myapplication.entity.BaseData;
-
 import java.util.List;
 
 /**
@@ -11,7 +9,6 @@ public class GongZhong extends BaseData {
 
     public GongZhong(int id, String name) {
         super(id, name);
-        // TODO Auto-generated constructor stub
     }
 
     private List<BaseData> jobtype;
